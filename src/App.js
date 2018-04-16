@@ -3,15 +3,6 @@ import ReactDOM from "react-dom"
 import './App.css';
 import data from './data.json';
 
-function findElement(arr, propName, propValue) {
-  for (var i=0; i < arr.length; i++)
-    if (arr[i][propName] == propValue)
-      return arr[i];
-
-  // will return undefined if not found; you could return a default instead
-}
-
-
 class App extends Component {
 
   constructor(props){
@@ -77,9 +68,6 @@ class Details extends React.PureComponent {
       budget: props.selectedFilm.budget,});
   }
 
-
-
-
   render() {
 
     var filmDetails = this.state.id 
@@ -98,7 +86,6 @@ class Details extends React.PureComponent {
     );
   }
 }
-
 
 
 class ListItem extends React.Component {
