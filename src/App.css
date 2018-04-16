@@ -1,28 +1,57 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
+.Header
+{
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
+  
+}
+.Header .header-title{
+  float: left;
+  width: 41%;
+}
+.Header div.header-logo{
+  float: right;
+  margin: 0% 5% 0% 0% 
 }
 
-.App-title {
-  font-size: 1.5em;
+.details.fix-position
+{
+  position: fixed;
 }
 
-.App-intro {
-  font-size: large;
+.details {
+  position: fixed;
+	float: left;
+	padding: 10px 2% 10px 2%;
+	margin: 20px 1% 20px 2%;
+	background: #fff;
+	border: 5px solid #ccc;
+	width: 44%; /* ie5win fudge begins */
+	width: 41%;
+	}
+.App .details {
+	width: 41%; /* ie5win fudge ends */
+}
+  
+.list-films {
+  float: right;
+  padding: 10px 2% 10px 2%;
+  margin: 20px 2% 20px 1%;
+  background: #fff;
+  border: 5px solid #ccc;
+  width: 44%; /* ie5win fudge begins */
+  width: 41%;
+  }
+.App .list-films {
+  width: 41%; /* ie5win fudge ends */
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.list-item {
+  border: 1px solid #ccc;
+}
+
+.list-item .list-item-poster{
+    max-width: 30%;
+    max-height: 30%;
 }
