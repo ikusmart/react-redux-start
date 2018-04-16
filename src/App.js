@@ -26,16 +26,33 @@ class App extends Component {
   }
 
   handleItemSelected(id) {
-    this.setState({ currentId: id });
+    this.state.currentId = id;
+    this.setState({ currentId: this.state.currentId });
+    var currentId = this.state.currentId;
+    var selectedFilm = this.state.films.filter(function(item, index, array)
+    {
+      if(item.id ==  currentId){return true;}
+    });
+    console.log(selectedFilm);
 }
 
   render() {
-    var selectedFilm = this.state.films.currentId ? findElement(this.state.films, "id", this.state.films.currentId) : null;
 
+    var currentId = this.state.currentId;
+    var selectedFilm = this.state.films.find(function(item)
+    {
+      return item.id ==  currentId;
+    }); 
+    selectedFilm = selectedFilm ? selectedFilm : new Object();
+    console.log(selectedFilm);
     return (
       <div className="App">
-          <Details {...selectedFilm}/>
-          {/*  */}
+          <Details    id={selectedFilm.id}
+                      title={selectedFilm.title}
+                      vote_average={selectedFilm.vote_average}
+                      poster_path = {selectedFilm.poster_path}
+                      overview = {selectedFilm.overview}
+                      budget = {selectedFilm.budget}/>
           <List films={this.state.films} onItemSelected={this.handleItemSelected}/>
       </div>
     );
@@ -59,15 +76,24 @@ class Details extends React.PureComponent {
     
   }
 
-  
+  componentWillReceiveProps(props)
+  {
+    this.setState({id: this.props.id,
+      title: this.props.title, 
+      vote_average: this.props.vote_average, 
+      poster_path: this.props.poster_path,
+      overview: this.props.overview, 
+      budget: this.props.budget,});
+  }
+
 
   render() {
 
     var filmDetails = this.props.id 
                                   ? <div>
                                       <img className="list-item-poster" src={this.state.poster_path} />
-                                      <h3>{this.state.title}}</h3>
-                                      <h2>{this.state.overview}}</h2>
+                                      <h3>{this.state.title}</h3>
+                                      <h2>{this.state.overview}</h2>
                                       <p>Vote - {this.state.vote_average}</p>
                                     </div>
                                   : <h1>No item selected</h1>;
@@ -90,7 +116,7 @@ class ListItem extends React.Component {
 
   render() {
     return (
-      <div className="list-item"> 
+      <div className="list-item" onClick={() => this.props.onItemSelected(this.state.id)}> 
         <img className="list-item-poster" src={this.state.poster_path} />
         <h3>{this.state.title}}</h3>
         <p>Vote - {this.state.vote_average}</p>
@@ -104,9 +130,17 @@ class List extends React.Component {
     super(props);
 
     this.state = {currentId: this.props.currentId, films: this.props.films};
+    this.handleItemSelect = this.handleItemSelect.bind(this);
+  }
+
+  handleItemSelect(event)
+  {
+    this.props.onItemSelected(this.props.id);
+    event.stopPropagation()
   }
 
   render() {
+     var handleItemSelect = this.props.onItemSelected;
       return (
         <div className="list-films">
             {this.state.films.map(film=><ListItem
@@ -115,7 +149,7 @@ class List extends React.Component {
                       title={film.title}
                       vote_average={film.vote_average}
                       poster_path = {film.poster_path}
-                      // onTaskDelete={handleTaskDel} 
+                      onItemSelected={handleItemSelect} 
                       />)}
         </div>
       )
