@@ -18,7 +18,7 @@ class App extends Component {
     super(props);
     
     this.handleItemSelected = this.handleItemSelected.bind(this);
-	  this.state = {films: [], currentId: null};
+	  this.state = {films: [], selectedFilm: new Object()};
   }
   componentWillMount(){
     this.state.films.push(data.data);
@@ -26,33 +26,24 @@ class App extends Component {
   }
 
   handleItemSelected(id) {
-    this.state.currentId = id;
-    this.setState({ currentId: this.state.currentId });
-    var currentId = this.state.currentId;
-    var selectedFilm = this.state.films.filter(function(item, index, array)
-    {
-      if(item.id ==  currentId){return true;}
-    });
-    console.log(selectedFilm);
-}
-
-  render() {
-
-    var currentId = this.state.currentId;
+    
+    var currentId = id;
     var selectedFilm = this.state.films.find(function(item)
     {
       return item.id ==  currentId;
     }); 
     selectedFilm = selectedFilm ? selectedFilm : new Object();
     console.log(selectedFilm);
+
+    this.state.selectedFilm = selectedFilm;
+    this.setState({ selectedFilm: this.state.selectedFilm });
+}
+
+  render() {
+
     return (
       <div className="App">
-          <Details    id={selectedFilm.id}
-                      title={selectedFilm.title}
-                      vote_average={selectedFilm.vote_average}
-                      poster_path = {selectedFilm.poster_path}
-                      overview = {selectedFilm.overview}
-                      budget = {selectedFilm.budget}/>
+          <Details    selectedFilm = {this.state.selectedFilm}/>
           <List films={this.state.films} onItemSelected={this.handleItemSelected}/>
       </div>
     );
@@ -66,30 +57,32 @@ class Details extends React.PureComponent {
     super(props);
     
 	  this.state = {
-      id: this.props.id,
-      title: this.props.title, 
-      vote_average: this.props.vote_average, 
-      poster_path: this.props.poster_path,
-      overview: this.props.overview, 
-      budget: this.props.budget,
+      id: this.props.selectedFilm.id,
+      title: this.props.selectedFilm.title, 
+      vote_average: this.props.selectedFilm.vote_average, 
+      poster_path: this.props.selectedFilm.poster_path,
+      overview: this.props.selectedFilm.overview, 
+      budget: this.props.selectedFilm.budget,
     };
     
   }
 
   componentWillReceiveProps(props)
   {
-    this.setState({id: this.props.id,
-      title: this.props.title, 
-      vote_average: this.props.vote_average, 
-      poster_path: this.props.poster_path,
-      overview: this.props.overview, 
-      budget: this.props.budget,});
+    this.setState({id: props.selectedFilm.id,
+      title: props.selectedFilm.title, 
+      vote_average: props.selectedFilm.vote_average, 
+      poster_path: props.selectedFilm.poster_path,
+      overview: props.selectedFilm.overview, 
+      budget: props.selectedFilm.budget,});
   }
+
+
 
 
   render() {
 
-    var filmDetails = this.props.id 
+    var filmDetails = this.state.id 
                                   ? <div>
                                       <img className="list-item-poster" src={this.state.poster_path} />
                                       <h3>{this.state.title}</h3>
