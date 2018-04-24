@@ -6,6 +6,9 @@
 # testing
 /coverage
 
+#test_snapshots
+/__tests__/__snapshots__/
+
 #dist
 /dist
 
