@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import logo from './res/Netflix.png'
+import logo from './Netflix.png'
+import registerServiceWorker from './registerServiceWorker';
 
 function AppLogo(props) {
 return (<div className="header-logo"><img src={logo}/> <p>Logo created by function</p> </div>)
@@ -22,5 +23,5 @@ const header =
   var app = React.createElement("div",null,header,<App />);
 
 
-ReactDOM.render(app, document.getElementById('app'));
+ReactDOM.render(app, document.getElementById('root'));
 registerServiceWorker();
