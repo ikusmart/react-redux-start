@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 
-module.exports = function(){
+module.exports = function(env){
 
     const config = {
         context: path.join(__dirname, "src"),
