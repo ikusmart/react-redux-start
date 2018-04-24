@@ -12,8 +12,6 @@ module.exports = function(env){
     const config = {
         context: path.join(__dirname, "src"),
         entry: "./",
-        mode:  "development",//isProduction ? "production" : "development",
-        devtool: "source-map",//isProduction ? "none" : "source-map",
 
         output: {
             path: path.join(__dirname, publicPath),
@@ -24,21 +22,9 @@ module.exports = function(env){
             extensions: ['.js', '.jsx']
         },
 
-        devServer: {
-            port: 3000,
-            host: 'localhost',
-            //Be possible go back pressing the "back" button at chrome
-            historyApiFallback: true,
-            noInfo: false,
-            stats: 'minimal',
-            publicPath: publicPath,
-            contentBase: path.join(__dirname, publicPath),
-            //hotmodulereplacementeplugin
-            hot: true
-          },
 
         module: {
-            rules: [
+          loader: [
               {
                 test: /\.jsx?$/,
                 loader: "babel-loader",
@@ -61,8 +47,7 @@ module.exports = function(env){
             ]
           },
            plugins: [
-             //new webpack.NoErrorsPlugin(),
-             //new webpack.HotModuleReplacementPlugin(),
+            new webpack.NoErrorsPlugin(),
             new ExtractTextPlugin("[name].css"),
             new HtmlWebpackPlugin({
                 title: "2 - Webpack",
