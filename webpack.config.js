@@ -7,11 +7,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 
-module.exports = function(env){
-
-    const config = {
+module.exports = {
         context: path.join(__dirname, "src"),
-        entry: "./",
+        entry: "./index.js",
 
         output: {
             path: path.join(__dirname, publicPath),
@@ -24,7 +22,7 @@ module.exports = function(env){
 
 
         module: {
-          loader: [
+          rules: [
               {
                 test: /\.jsx?$/,
                 loader: "babel-loader",
@@ -47,7 +45,7 @@ module.exports = function(env){
             ]
           },
            plugins: [
-            new webpack.NoErrorsPlugin(),
+            new webpack.NoEmitOnErrorsPlugin(),
             new ExtractTextPlugin("[name].css"),
             new HtmlWebpackPlugin({
                 title: "2 - Webpack",
@@ -55,7 +53,4 @@ module.exports = function(env){
                 template: path.resolve(__dirname, "./src/index.html")
               })
          ],
-    }
-
-    return config;
 };
