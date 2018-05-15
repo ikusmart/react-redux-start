@@ -14,10 +14,14 @@ module.exports = merge(common, {
         historyApiFallback: true,
         noInfo: false,
         stats: 'minimal',
-        publicPath: publicPath,
         contentBase: path.join(__dirname, publicPath),
         //hotmodulereplacementeplugin
-        hot: true
+        hot: true               
+      },
+      watchOptions: {
+        aggregateTimeout: 300,
+        poll: 1000,
+        ignored: /node_modules/
       },
       plugins: [
        new webpack.HotModuleReplacementPlugin(),
