@@ -1,0 +1,35 @@
+@import url("../../index.css");
+
+.search-container{
+    background-color:  #3d3935;
+    color: rgb(238, 232, 232);
+    padding: 1em 1em 1em 1em;
+}
+
+.row{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.search-button{
+    width: 10em;
+}
+
+.search-filter-button 
+{
+    width: 10em;
+    margin: 0em 1em 0em 0em
+}
+
+.active-search-botton
+{
+    background-color: #f08080;
+    border-color:  #f77676
+}
+
+
+.search-input .form-control:focus
+{
+    border-color: rgb(247, 118, 118);
+    box-shadow: 0 0 0 0.2rem rgba(247, 118, 118, 0.25);
+}

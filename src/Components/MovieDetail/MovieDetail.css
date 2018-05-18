@@ -1,0 +1,27 @@
+@import url("../../index.css");
+
+.movie-detail 
+{
+    background-color:  #3d3935;
+    color: rgb(238, 232, 232);
+    padding: 1em 1em 1em 1em;
+}
+
+.movie-title{
+    color: #f08080;
+    font-weight: bold;
+    font-size: xx-large; 
+}
+
+.movie-release_date{
+    font-weight: bold;
+}
+.movie-runtime{
+    font-weight: bold;
+}
+
+.movie-vote{
+    color: steelblue;
+    font-weight: bold;
+    font-size: xx-large; 
+}
