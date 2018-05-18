@@ -22,7 +22,7 @@ class Movie extends React.Component {
                     <img className="card-img-top" src={movie.poster_path}/>
                     <div className="card-body">
                         <h4>{movie.title}</h4>
-                        <span class="badge badge-secondary">{movie.release_date}</span>
+                        <span className="badge badge-secondary">{movie.release_date}</span>
                     </div>
                     <div className="card-footer">
                         <small>{movie && movie.genres.join(', ') || ""}</small>

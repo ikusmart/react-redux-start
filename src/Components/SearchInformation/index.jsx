@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import './SearchInformation.css';
 
 class SearchInformation extends React.Component {
-    static defaultProps = {
-        countMoviesFound: 0,
-        orderBy: "releaseDate",
-        genres: ["asdasd","234234"]
-    };
-
     render() {
         const { countMoviesFound, orderBy, genres } = this.props;
 
