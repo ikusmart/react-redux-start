@@ -14,19 +14,17 @@ class Movie extends React.Component {
 
     render() {
         const { movie } = this.props;
-        const year = Date.parse(movie.release_date)
+        const year = parseInt(movie.release_date)
 
         return (
             <React.Fragment>
                 <div className="movie-card card card-inverse card-info">
-                    <img className="card-img-top" src={movie.poster_path}/>
-                    <div className="card-body">
-                        <h4>{movie.title}</h4>
-                        <span className="badge badge-secondary">{movie.release_date}</span>
+                    <img className="movie-img card-img-top" src={movie.poster_path}/>
+                    <div className="movie-body">
+                        <div className="movie-title">{movie.title}</div>
+                        <div className="movie-year">{year}</div>
                     </div>
-                    <div className="card-footer">
-                        <small>{movie && movie.genres.join(', ') || ""}</small>
-                    </div>
+                    <div className="movie-ganres">{movie && movie.genres.join(', ') || ""}</div>
                 </div>
             </React.Fragment>
         );

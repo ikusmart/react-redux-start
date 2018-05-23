@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './MovieDetail.css';
+import ErrorBoundary from '../../Common/ErrorBoundary'
 
 class MovieDetail extends React.Component {
     static propTypes = {
@@ -19,36 +20,40 @@ class MovieDetail extends React.Component {
 
     render() {
         const { movie } = this.props;
-        const year = Date.parse(movie.release_date);
-        //const genres = this.state.genres.join(", ");
-
+        const year = parseInt(movie.release_date);
+        
         return (
-
+            <ErrorBoundary>
                 <div className="movie-detail container">
                     <div className="row">
-                        <div className="col-3">
+                        <div className="col-4">
                             <img className="card-img-top" src={movie.poster_path}/>
                         </div>
-                        <div className="col-9">
+                        <div className="col-8">
                             <div className="row">
-                                <div className="col-6 movie-title">{movie.title}</div><div className="col-3 movie-vote">{movie.vote_average}</div>
+                                <div className="col-6 movie-title">{movie.title}</div>
+                                <div className="movie-vote">
+                                    {movie.vote_average}
+                                </div>
                             </div>
-                            <div className="row">
+
+                            <div className="row ">
                                 <div className="col-12 movie-tagline">{movie.tagline}</div>
                             </div>
                             <div className="row">
-                                <div className="col-3 movie-release_date">{movie.release_date}</div><div className="col-3 movie-runtime">{movie.runtime} min</div>
+                                <div className="col-3 movie-release_date">{year}</div><div className="col-3 movie-runtime">{movie.runtime} min</div>
                             </div>
                             <div className="row">
                                 <div className="col-12 movie-overview">{movie.overview}</div>
                             </div>
                             
                             <div className="row">
-                                
+                                <div className="col-12 movie-genres">{movie && movie.genres.join(', ') || ""}</div>
                             </div>
                     </div>
                     </div>
                 </div>
+            </ErrorBoundary>
         );
     }
 }

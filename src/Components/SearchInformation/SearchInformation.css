@@ -3,19 +3,22 @@
 .search-information-bar
 {
         clear: both;
-        background-color: #8f8f8f;
+        font-weight: bold;
 }
 
-.orderby-options button.btn
+.orderby-options
+{
+    font-weight: bold; 
+}
+.orderby-options a.btn
 {
     margin: 0em 0.2em 0em 0.2em;
+    font-weight: bold;
 }
-.orderby-options button.btn:focus{
+.orderby-options a.btn:focus{
     box-shadow: none
 }
-.active
+.orderby-options a.btn.active
 {
-    background-color: #f08080;
-    border-color: #f77676;
-    font-weight: bold;
+    color: #f55360
 }

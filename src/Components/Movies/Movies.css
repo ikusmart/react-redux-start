@@ -1,1 +1,4 @@
-@import url("../../index.css");
+.search-result-container 
+{
+    width: 85%;
+}

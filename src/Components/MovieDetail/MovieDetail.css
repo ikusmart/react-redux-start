@@ -2,17 +2,31 @@
 
 .movie-detail 
 {
-    background-color:  #3d3935;
-    color: rgb(238, 232, 232);
-    padding: 1em 1em 1em 1em;
+    background-color:  #15141c;
+    color: #eee8e8;
+    padding: 0em 5em 1em 5em;
 }
 
+.movie-tagline{
+    font-size: large;
+    margin: 10px 0 10px 0;
+}
 .movie-title{
-    color: #f08080;
+    color: #f55360;
     font-weight: bold;
     font-size: xx-large; 
 }
 
+.movie-overview
+{
+    margin: 20px 0 10px 0;
+    font-size: large;
+}
+.movie-genres
+{
+    margin: 20px 0 10px 0;
+    font-size: small;
+}
 .movie-release_date{
     font-weight: bold;
 }
@@ -21,7 +35,11 @@
 }
 
 .movie-vote{
-    color: steelblue;
-    font-weight: bold;
-    font-size: xx-large; 
+    color: lightgreen;
+    font-weight: normal;
+    font-size: xx-large;
+    border: 1px solid lightgreen;
+    text-align: center;
+    border-radius: 50%;
+    padding: 5px;
 }

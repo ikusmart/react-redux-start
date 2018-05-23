@@ -1,35 +1,61 @@
 @import url("../../index.css");
 
 .search-container{
-    background-color:  #3d3935;
-    color: rgb(238, 232, 232);
+   
+    background-color:  #15141c;
+    color: #ffffff;
     padding: 1em 1em 1em 1em;
-}
+    font-weight:bold; 
 
-.row{
+}
+.search-container .row{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
 
-.search-button{
+.search-container .search-options
+{
+    text-transform: uppercase;
+    font-weight:bold; 
+}
+
+.search-container .search-button{
     width: 10em;
+    background-color: #f55360;
+    border-color:  #f34655;
+    font-weight:bold; 
+    color: #ffffff;
 }
 
-.search-filter-button 
+.search-container  .search-filter-button 
 {
     width: 10em;
-    margin: 0em 1em 0em 0em
+    margin: 0em 1em 0em 1em;
+    font-weight:bold;
+    background-color: #3c3c3c;
+    color: #ffffff;
+} 
+
+.search-container .search-filter-button.active-search-botton
+{
+    background-color: #f55360;
+    border-color:  #f34655
 }
 
-.active-search-botton
+.search-input .form-control
 {
-    background-color: #f08080;
-    border-color:  #f77676
+    color: #d2d2d2;
+    background-color: black;
+    line-height: 2.5;
+    border-radius: 0;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 2px solid #f55360;
 }
 
-
-.search-input .form-control:focus
+ .search-input .form-control:focus
 {
-    border-color: rgb(247, 118, 118);
-    box-shadow: 0 0 0 0.2rem rgba(247, 118, 118, 0.25);
+    border: 0 0 1px 0 solid #f55360;
+    box-shadow: none;
 }
