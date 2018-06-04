@@ -1,0 +1,24 @@
+@import url("../../index.css");
+
+.search-information-bar
+{
+        clear: both;
+        font-weight: bold;
+}
+
+.orderby-options
+{
+    font-weight: bold; 
+}
+.orderby-options a.btn
+{
+    margin: 0em 0.2em 0em 0.2em;
+    font-weight: bold;
+}
+.orderby-options a.btn:focus{
+    box-shadow: none
+}
+.orderby-options a.btn.active
+{
+    color: #f55360
+}

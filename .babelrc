@@ -4,6 +4,18 @@
         "es2015"
     ],
     "plugins": [
-        "react-hot-loader/babel"
+        "react-hot-loader/babel",
+        "transform-class-properties",
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "./src"
+                ],
+                "alias": {
+                    "<components>": "./src/Components"
+                }
+            }
+        ]
     ]
 }

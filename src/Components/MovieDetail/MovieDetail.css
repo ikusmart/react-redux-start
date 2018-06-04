@@ -1,0 +1,45 @@
+@import url("../../index.css");
+
+.movie-detail 
+{
+    background-color:  #15141c;
+    color: #eee8e8;
+    padding: 0em 5em 1em 5em;
+}
+
+.movie-tagline{
+    font-size: large;
+    margin: 10px 0 10px 0;
+}
+.movie-title{
+    color: #f55360;
+    font-weight: bold;
+    font-size: xx-large; 
+}
+
+.movie-overview
+{
+    margin: 20px 0 10px 0;
+    font-size: large;
+}
+.movie-genres
+{
+    margin: 20px 0 10px 0;
+    font-size: small;
+}
+.movie-release_date{
+    font-weight: bold;
+}
+.movie-runtime{
+    font-weight: bold;
+}
+
+.movie-vote{
+    color: lightgreen;
+    font-weight: normal;
+    font-size: xx-large;
+    border: 1px solid lightgreen;
+    text-align: center;
+    border-radius: 50%;
+    padding: 5px;
+}

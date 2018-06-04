@@ -1,0 +1,35 @@
+@import url("../../Movies.css");
+
+.movie-card {
+    margin: 1em 0em 1em 0em;
+    border: none;
+    width: 90%;
+}
+.movie-card .movie-img 
+{
+    margin-bottom: 1em; 
+}
+.movie-card .movie-body .movie-title
+{
+    text-transform: uppercase;
+    font-size: medium;
+    font-weight: bold;
+    color: #606060;
+    float: left;
+}
+.movie-card .movie-body .movie-year
+{
+    float: right;
+    font-size: small;
+    border: 2px solid rgb(138,138,138);
+    padding: 1px 10px 1px 10px;
+    border-radius: 5px;
+}
+.movie-card .movie-ganres
+{
+    clear: both;
+    color: #606060;
+    float: left;
+    font-size: small;
+
+}
