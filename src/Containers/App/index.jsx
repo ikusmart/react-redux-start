@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import Details from '../Details';
 import Main from '../Main';
 import './App.css';
+import ErrorBoundary from '../../Common/ErrorBoundary';
+import Header from '../../Components/Header';
+import Footer from '../../Components/Footer';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -35,24 +39,22 @@ class App extends React.Component {
   render() {
     const selectedMovie = this.state.selectedMovie;
     return (
-      <div className="App">
-        <div className="container">
-          <div className="row header">
-            <span>netflixroulette</span>
-          </div>
-          <div className="row body">
+      <ErrorBoundary>
+        <div className="App">
+          <div className="container">
+            <Header />
+            <div className="row body">
 
-            {
-                selectedMovie
-                ? <Details {...this.state} />
-                : (<Main {...this.state} />)
-              }
-          </div>
-          <div className="row footer">
-            <span className="pagination-centered">netflixroulette 2018</span>
+              {
+                  selectedMovie
+                  ? <Details {...this.state} />
+                  : (<Main {...this.state} />)
+                }
+            </div>
+            <Footer />
           </div>
         </div>
-      </div>
+      </ErrorBoundary>
     );
   }
 }

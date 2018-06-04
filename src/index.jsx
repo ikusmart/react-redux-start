@@ -5,8 +5,8 @@ import moviesDB from './res/data.json';
 import App from './Containers/App';
 
 const movies = moviesDB.data;
-const selectedMovie = movies[0];
-//const selectedMovie = null;
+//const selectedMovie = movies[0];
+const selectedMovie = null;
 const orderBy = 'rating';
 const searchTerms = { searchTerm: null, searchByTitle: true, searchByGenre: false };
 

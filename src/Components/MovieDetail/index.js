@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './MovieDetail.css';
-import ErrorBoundary from '../../Common/ErrorBoundary'
 
 class MovieDetail extends React.Component {
     static propTypes = {
@@ -23,7 +22,6 @@ class MovieDetail extends React.Component {
         const year = parseInt(movie.release_date);
         
         return (
-            <ErrorBoundary>
                 <div className="movie-detail container">
                     <div className="row">
                         <div className="col-4">
@@ -53,7 +51,6 @@ class MovieDetail extends React.Component {
                     </div>
                     </div>
                 </div>
-            </ErrorBoundary>
         );
     }
 }

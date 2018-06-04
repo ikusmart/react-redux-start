@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from "react-dom"
 import PropTypes from 'prop-types';
 import './Search.css';
-import ErrorBoundary from '../../Common/ErrorBoundary'
 
 
 class Search extends React.PureComponent {
@@ -26,7 +25,6 @@ class Search extends React.PureComponent {
       const searchByTitle =  this.state.searchByTitle;
       const searchByGenre =  this.state.searchByGenre;
       return (
-        <ErrorBoundary>
             <div className="search-container col-12">
                 <div className="container">
                 <form>
@@ -52,7 +50,6 @@ class Search extends React.PureComponent {
                 </form>
                 </div>
             </div>
-        </ErrorBoundary>
       );
     }
   }

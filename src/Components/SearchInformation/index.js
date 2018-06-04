@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './SearchInformation.css';
-import ErrorBoundary from '../../Common/ErrorBoundary'
 
 class SearchInformation extends React.PureComponent {
   render() {
     const { countMoviesFound, orderBy, genres } = this.props;
 
     return (
-      <ErrorBoundary>
         <div className="container search-information-bar">
           <div className="row">
             <div className="col-4">
@@ -32,7 +30,6 @@ class SearchInformation extends React.PureComponent {
             </div>
           </div>
         </div>
-      </ErrorBoundary>
     );
   }
 }
