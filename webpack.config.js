@@ -15,10 +15,6 @@ module.exports = {
     path: path.join(__dirname, publicPath),
     filename: 'bundle.js',
   },
-
-  
-
-
   module: {
     rules: [
       {
